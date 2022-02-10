@@ -1,10 +1,17 @@
 import "./App.css";
+import data from "./data.json";
+import MenuItems from "./components/MenuItems/MenuItems";
 
 function App() {
+
+
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <main>
+      <section className="section menu">
+        <h2>Our Menu</h2>
+        <MenuItems data={data} />
+      </section>
+    </main>
   );
 }
 
