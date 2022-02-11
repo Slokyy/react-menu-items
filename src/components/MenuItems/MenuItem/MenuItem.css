@@ -1,0 +1,37 @@
+.menu-items {
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
+	grid-row-gap: 40px;
+}
+
+.menu-item-img {
+	width: 225px;
+	height: 150px;
+	object-fit: cover;
+}
+
+.menu-item {
+	grid-template-columns: 225px auto;
+	gap: 10px;
+	padding: 5px;
+}
+
+.title-price {
+	text-transform: capitalize;
+	justify-content: space-between;
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #163757;
+}
+
+.title-price span {
+	color: #ce8d00;
+	letter-spacing: 2px;
+}
+
+.menu-item-desc {
+	color: #617d98;
+}

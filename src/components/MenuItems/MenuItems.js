@@ -1,9 +1,11 @@
 import React from "react";
 import MenuItem from "./MenuItem/MenuItem";
 import { useState } from "react";
+import "./MenuItems.css";
 
 const MenuItems = (props) => {
   const data = props.data;
+
   const [menu, setMenu] = useState(data);
 
   const handleAll = () => {
@@ -13,7 +15,19 @@ const MenuItems = (props) => {
     setMenu(items);
   };
 
-  const handleBreakfast = () => {
+  const handleCategory = (cat) => {
+    const items = data.filter((element, index) => {
+      return element.category === cat;
+    })
+    setMenu(items);
+  }
+
+  console.log(menu);
+
+  /**
+   * Prvobitno sam ovo probao pa sam skontao da je to usustini jedna funkcija
+   */
+  /* const handleBreakfast = () => {
     const items = data.filter((element, index) => {
       return element.category === "breakfast";
     });
@@ -32,16 +46,19 @@ const MenuItems = (props) => {
       return element.category === "shakes";
     });
     setMenu(items);
-  };
+  }; */
 
-  console.log(menu);
+
 
   return (
-    <div>
-      <button onClick={handleAll}>All</button>
-      <button onClick={handleBreakfast}>Breakfast</button>
-      <button onClick={handleLunch}>Lunch</button>
-      <button onClick={handleShakes}>Shakes</button>
+    <div className="menu-items">
+      <div className="button-group flex">
+        <button onClick={handleAll}>All</button>
+        <button onClick={() => handleCategory("breakfast")}>Breakfast</button>
+        <button onClick={() => handleCategory("lunch")}>Lunch</button>
+        <button onClick={() => handleCategory("shakes")}>Shakes</button>
+
+      </div>
       <MenuItem menu={menu} />
     </div>
   );
