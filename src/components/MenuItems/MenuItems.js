@@ -9,10 +9,7 @@ const MenuItems = (props) => {
   const [menu, setMenu] = useState(data);
 
   const handleAll = () => {
-    const items = data.filter((element, index) => {
-      return element;
-    });
-    setMenu(items);
+    setMenu(data);
   };
 
   const handleCategory = (cat) => {
